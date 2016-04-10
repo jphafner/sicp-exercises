@@ -1,0 +1,9 @@
+
+
+## Proof by induction
+
+1) show than n=1 works, trivial
+2) shown that f(n) + f(n-1) = f(n+1), this is related to the binomial theorem
+
+NOTE: See ex1-13.tex for a more througoug explanation
+

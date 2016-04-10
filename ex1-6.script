@@ -1,0 +1,35 @@
+Script started on Sun 03 Apr 2016 05:43:41 PM EDT
+[jphafner@hedonism sicp-exercises]$ guile
+GNU Guile 2.0.11
+Copyright (C) 1995-2014 Free Software Foundation, Inc.
+
+Guile comes with ABSOLUTELY NO WARRANTY; for details type `,show w'.
+This program is free software, and you are welcome to redistribute it
+under certain conditions; type `,show c' for details.
+
+Enter `,help' for help.
+scheme@(guile-user)> (load "ex1-6.scm")
+;;; note: source file /home/jphafner/Projects/sicp-exercises/ex1-6.scm
+;;;       newer than compiled /home/jphafner/.cache/guile/ccache/2.0-LE-8-2.0/home/jphafner/Projects/sicp-exercises/ex1-6.scm.go
+;;; note: auto-compilation is enabled, set GUILE_AUTO_COMPILE=0
+;;;       or pass the --no-auto-compile argument to disable.
+;;; compiling /home/jphafner/Projects/sicp-exercises/ex1-6.scm
+;;; compiled /home/jphafner/.cache/guile/ccache/2.0-LE-8-2.0/home/jphafner/Projects/sicp-exercises/ex1-6.scm.go
+scheme@(guile-user)> (sqrt 10)
+$1 = 3.162277665175675
+scheme@(guile-user)> (new-sqrt 10)
+/home/jphafner/Projects/sicp-exercises/ex1-6.scm:17:13: In procedure good-enough?:
+/home/jphafner/Projects/sicp-exercises/ex1-6.scm:17:13: Throw to key `vm-error' with args `(vm-run "VM: Stack overflow" ())'.
+
+Script done on Sun 03 Apr 2016 05:44:20 PM EDT
+
+
+## The stackoverflow is due to applicative-order evaluation:
+##  The operands are evaluated before being applied by the expression,
+##  hence, new-sqrt-iter calls itself recursively until the stack overflows
+## In essence, it is evaluating the consequent before the predicate
+
+## ``If'' works by evaluating the predicate first,
+##  then decides to evaluate the consequent or the alternative.
+## This deviates from normal behavior, hence it being a special form
+

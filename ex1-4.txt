@@ -1,0 +1,11 @@
+
+(define (a-plus-abs-b a b))
+    ((if (> b 0) + -) a b))
+
+;; The if statement has form
+;; if <predicate> <consequent> <alternative>
+;; the predicate is (> b 0)
+;; the consequent is operator +
+;; the alternative is operator -
+;; The chosen operator operates on a b
+

@@ -1,0 +1,59 @@
+\documentclass[]{amsart}
+
+\begin{document}
+
+\section{Proof by Induction}
+
+We start with the following definitions
+\begin{align}
+    \phi    &= \frac{1 + \sqrt{5}}{2} \\
+    \psi    &= \frac{1 - \sqrt{5}}{2}
+\end{align}
+and are asked to prove that
+\begin{equation}
+    \mathrm{fib}(n) = \frac{\phi^n - \psi^n}{\sqrt{5}}
+\end{equation}
+
+For a proof by induction we must first prove that the trivial case is true, this is a trivial task.
+Next we must show that if we have $n$, that $n+1$ is guaranteed to work.
+We will show this by establishing that
+\begin{equation}
+    \mathrm{fib}(n+1) = \mathrm{fib}(n) +  \mathrm{fib}(n-1)
+\end{equation}
+
+The binomial expansion states that
+\begin{equation}
+    \left(1 + a\right) = \sum_{k=0}^{n} \left(\begin{array}{c} n \\ k \end{array} \right) a^k
+\end{equation}
+
+We rewrite  $\phi$ and $\psi$ accordingly
+\begin{align}
+    \left(2\phi\right)^n    &= \sum_{k=0}^{n} \left(\begin{array}{c} n \\ k \end{array} \right) a^k \\
+    \left(2\psi\right)^n  &= \sum_{k=0}^{n} \left(\begin{array}{c} n \\ k \end{array} \right) (-1)^{k} a^k
+\end{align}
+
+where $a = \sqrt{5}$, to ease reading.
+
+The difference between $\phi$ and $\psi$ are the terms that are negative in $\psi$.
+\begin{equation}
+    \phi^n-\psi^n = \left(\dfrac{1}{2}\right)^n \sum_{k=1,odd}^{n} \left(\begin{array}{c} n \\ k \end{array} \right) a^k
+\end{equation}
+We can then redefine our fib function as
+\begin{equation}
+    \mathrm{fib}(n) = \left(\dfrac{1}{2}\right)^n \sum_{k=1,odd}^{n} \left(\begin{array}{c} n \\ k \end{array} \right) a^{k-1}
+\end{equation}
+
+Now with the combination identity of
+\begin{equation}
+    \left(\begin{array}{c} n \\ k \end{array} \right) = \frac{n!}{k!(n-k)!}
+\end{equation}
+
+
+
+It is trivial now to establish that the case of $n$ and $n-1$ will sum to the case for $n+1$.
+This is a property of the binomial theorem.
+
+
+\end{document}
+
+

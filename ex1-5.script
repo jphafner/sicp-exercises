@@ -1,0 +1,21 @@
+Script started on Sun 03 Apr 2016 02:54:51 PM EDT
+[jphafner@hedonism sicp-exercises]$ guile
+GNU Guile 2.0.11
+Copyright (C) 1995-2014 Free Software Foundation, Inc.
+
+Guile comes with ABSOLUTELY NO WARRANTY; for details type `,show w'.
+This program is free software, and you are welcome to redistribute it
+under certain conditions; type `,show c' for details.
+
+Enter `,help' for help.
+scheme@(guile-user)> (define (p) (p))
+scheme@(guile-user)> (define (test x y) (if (= x 0) 0 y))
+scheme@(guile-user)> test (test 0 p)
+$1 = 0
+scheme@(guile-user)> (test 0 (p))
+Terminated
+
+[jphafner@hedonism sicp-exercises]$ exit
+
+Script done on Sun 03 Apr 2016 02:57:16 PM EDT
+
