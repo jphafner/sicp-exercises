@@ -1,0 +1,19 @@
+
+
+(sine 12.15)
+(p (sin (/ 12.15 3.0)))
+(p (sin 4.05)
+(p (p (sin (/ 4.05 3.0)))
+(p (p (sin 1.35)))
+(p (p (p (sin (/ 1.35 3.0)))))
+(p (p (p (sin 0.45))))
+(p (p (p (p (sin (/ 0.45 3.0))))))
+(p (p (p (p (sin 0.15)))))
+(p (p (p (p (p (sin (/ 0.15 3.0)))))))
+(p (p (p (p (p (sin 0.05))))))
+(p (p (p (p (p 0.05)))))
+
+## a) p is applied five times
+
+## b) logarithmic in growth, as a multiplicative addition of the input will linearly add to the steps required
+
