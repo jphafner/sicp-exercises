@@ -7,14 +7,14 @@
 ## Links
 - [Gnu Guile](https://www.gnu.org/software/guile/)
 - [Racket](http://racket-lang.org/)
+- [Gambit-C](http://gambitscheme.org/) and [source](https://github.com/gambit/gambit)
+
 
 - [Fedora Copr](https://copr.fedorainfracloud.org/coprs/bthomas/racket/)
-
     sudo dnf copr enable bthomas/racket
     sudo dnf install racket
 
 
 ## Notes
-
 - Pretty printing: align operands vertically
 
