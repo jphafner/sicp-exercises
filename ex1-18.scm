@@ -1,5 +1,4 @@
 
-
 ;; from HINT
 (define (double a)
   (* a 2))
