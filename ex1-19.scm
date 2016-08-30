@@ -18,6 +18,9 @@
 (define (square a)
   (* a a))
 
+(define (double a)
+  (* a 2))
+
 (define (fast-expt b n)
   (cond ((= n 0) 1)
         ((even? n)
@@ -36,10 +39,10 @@
          (fib-iter a
                    b
                    ;; solve for ex1-19
-                   (square p) ; comput p'
-                   (square q) ; comput p'
+                   (+ (square p) (square q)) ; comput p'
+                   (+ (* 2 p q)  (square q)) ; comput q'
                    (/ count 2)))
-        (else (fib-iter (+ (*b q) (* a q) (* a p))
+        (else (fib-iter (+ (* b q) (* a q) (* a p))
                         (+ (* b p) (* a q))
                         p
                         q
