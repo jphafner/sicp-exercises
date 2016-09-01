@@ -1,5 +1,6 @@
 
-;; NOTE logarithmic growth
+;(declare (gcd))
+
 (define (gcd a b)
   (if (= b 0)
     a
