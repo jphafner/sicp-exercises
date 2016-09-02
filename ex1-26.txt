@@ -1,0 +1,5 @@
+
+Louis is calculating the quantity twice,
+    if he was using a square function,
+    then he only calculates the expmod value once.
+

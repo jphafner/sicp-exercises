@@ -1,20 +1,20 @@
 
 
-(define (square a)
-  (* a a))
+;; this gives a floating point overflow
+
 (define (even? n)
   (= (remainder n 2) 0))
 
-;; Section 1.2.6
+(define (square a)
+  (* a a))
+
+(define (fast-expt b n)
+  (cond ((= n 0) 1)
+        ((even? n)  (square (fast-expt b (/ n 2))))
+        (else (* b (fast-expt b (- n 1))))))
+
 (define (expmod base exp m)
-  (cond ((= exp 0) 1 )
-        ((even? exp)
-         (remainder (square (expmod base (/ exp 2) m))
-                    m))
-        (else
-         (newline)
-          (remainder (* base (expmod base (- exp 1) m))
-                     m))))
+  (remainder (fast-expt base exp) m))
 
 (define (fermat-test n)
   (define (try-it a)
@@ -27,23 +27,19 @@
         (else #f)))
 
 
-;; start problem
-
 ;; timed first num primes starting at n
 (define (search-for-num-primes n num)
-  ;(define start-time (runtime))
+  (define start-time (runtime))
   (search-iter n num 0)
   (newline)
-  ;(display "Runtime: ")
-  ;(display (- (runtime) start-time))
+  (display "Runtime: ")
+  (display (- (runtime) start-time))
   (display " seconds")
   #t)
 
 (define (search-iter n num count)
-  (cond 
-    ((= num count) #t )
-    ((even? (floor n))
-     (display "even")
+  (cond ((= num count) #t )
+    ((even? n)
      (search-iter (+ n 1) num count))
     ((fast-prime? (floor n) 4)
      (display "Prime: ")
@@ -51,5 +47,4 @@
      (newline)
      (search-iter (+ n 1) num (+ count 1)))
     (else (search-iter (+ n 1) num count))))
-
 
