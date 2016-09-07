@@ -1,0 +1,129 @@
+Script started on Tue 06 Sep 2016 03:27:55 PM EDT
+kjphafner@localhost:~/Projects/sicp-exercises\[jphafner@localhost sicp-exercises]$ mit-sche
+mit-scheme@        mit-scheme-native@ mit-scheme-x86-64  
+[jphafner@localhost sicp-exercises]$ mit-scheme < ex1-27.scm
+MIT/GNU Scheme running under GNU/Linux
+Type `^C' (control-C) followed by `H' to obtain information about interrupts.
+
+Copyright (C) 2014 Massachusetts Institute of Technology
+This is free software; see the source for copying conditions. There is NO warranty; not even for
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Image saved on Saturday May 17, 2014 at 2:39:25 AM
+  Release 9.2 || Microcode 15.3 || Runtime 15.7 || SF 4.41 || LIAR/x86-64 4.118 || Edwin 3.116
+
+1 ]=> 
+(load "ex1-24.scm")
+;Loading "ex1-24.scm"... done
+;Value: search-iter
+
+1 ]=> ; Carmichael numbers: 561 1105 1729 2465 2821 6601
+(map fast-prime? (list 561 1105 2465 2821 6601) (list  4 4 4 4 4))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;Value 13: (#t #t #t #t #t)
+
+1 ]=> ;Value 1: (#t #t #t #t #t)
+
+End of input stream reached.
+Moriturus te saluto.
+kjphafner@localhost:~/Projects/sicp-exercises\[jphafner@localhost sicp-exercises]$ exit
+
+Script done on Tue 06 Sep 2016 03:28:07 PM EDT
