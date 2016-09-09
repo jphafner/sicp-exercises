@@ -15,6 +15,12 @@
     sudo dnf copr enable bthomas/racket
     sudo dnf install racket
 
+## Misc Links
+-[ ] Philip Wadler "The Essence of Functional Programming" 1992
+-[ ] John Hughes "Why Functional Programming Matters" 1984
+-[ ] John Backus "Can We Be Liberated From the von Neumann Machine?" 1977
+-[ ] https://dl.dropboxusercontent.com/u/7810909/docs/what-does-fp-mean/what-does-fp-mean.html
+
 
 # Notes
 - Pretty printing: align operands vertically
