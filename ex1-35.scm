@@ -1,5 +1,4 @@
 
-
 ; find x: a<x<b,  such that f(x)=0, given f(a)<0<f(b)
 (define (search f neg-point pos-point)
   (let ((midpoint (average neg-point pos-point)))
@@ -50,5 +49,11 @@
 
 (fixed-point cos 1.0)
 (fixed-point (lambda (y) (+ (sin y) (cos y))) 1.0)
+
+;; ex1-35 solution
+(fixed-point (lambda (x) (+ 1 (/ 1 x))) 1.0)
+;; this prints 1.6180327868
+
+;; golden number = (\sqrt{5}+1)/2.0 = 1.618033988749895
 
 
