@@ -28,3 +28,22 @@
     (car x)
     (cdr x)))
 
+
+;; text definitions
+(define (par1 r1 r2)
+  (div-interval (mul-interval r1 r2)
+                (add-interval r1 r2)))
+
+(define (par2 r1 r2)
+  (let ((one (make-interval 1 1)))
+    (div-interval one (add-interval (div-interval one r1)
+                                    (div-interval one r2)))))
+
+;; ex2-14
+(par1 (make-interval 2.5 1) (make-interval 3.5 1))
+(par2 (make-interval 2.5 1) (make-interval 3.5 1))
+
+;; ex2-15 and ex2-16
+;; yes, par2 is a better program
+;; REF: https://en.wikipedia.org/wiki/Interval_arithmetic#Dependency_problem
+

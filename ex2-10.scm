@@ -1,5 +1,4 @@
 
-;; text definitions
 (define (add-interval x y)
   (make-interval (+ (lower-bound x) (lower-bound y))
                  (+ (upper-bound x) (upper-bound y))))
@@ -27,4 +26,9 @@
   (if (> (car x) (cdr x))
     (car x)
     (cdr x)))
+
+;; ex2-10
+(define (div-interval x y)
+  (cond ((= (upper-bound y) (lower-bound x)) (error "cannot divide by zero"))
+        (else (mul-interval x (make-interval (/ 1.0 (upper-bound y)) (/ 1.0 (lower-bound y)))))))
 
