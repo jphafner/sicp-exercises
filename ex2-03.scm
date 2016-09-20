@@ -1,5 +1,5 @@
 
-
+;; based on ex2-02
 (define (make-rectangle ll ur)
   (cons ll ur))
 
@@ -44,14 +44,13 @@
 (print-point (make-point 20 10))
 (print-point (make-point 4.5 6.75))
 
-;; ex2-02
 (define (perimeter r)
   (* 2 (+ (height r) (width r))))
 
 (define (area r)
   (* (height r) (width r)))
 
-;; Alternative implementation could be lower-left is cdr
 
+;; Alternative implementation could be lower-left is cdr
 ;; NOTE: TODO: generalize procedures so lower-left can be either car or cdr
 
