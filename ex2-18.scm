@@ -1,16 +1,11 @@
 
-;; TODO: finish this
-(define (last-pair a)
-  (if (null? (cdr a))
-    (car a)
-    (last-pair (cdr a))))
-
-(define (reverse a)
-  (define (loop a b)
-    (if (null? cdr a)
-      (append b (last-pair a))
-      (loop (append b (last-pair (cdr a)))))
-  (loop a (list ) ))
-
+;; from internet
+;; this problem stumped me more than most
+(define (reverse items)
+  (if (null? items)
+    items
+    (append (reverse (cdr items)) (list (car items)))))
 
 (reverse (list 1 4 9 16 25))
+;Value: (25 16 9 4 1)
+
